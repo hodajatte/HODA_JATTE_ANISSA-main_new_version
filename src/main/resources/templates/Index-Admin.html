@@ -32,8 +32,10 @@
     <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
+
     <!-- css ListeDemande-->
     <link rel="stylesheet" href="ListeDemandes/ListeDemandeGeneral.css" />
+
 </head>
 <body class="dashboard dashboard_1">
 <div class="full_container">
@@ -69,7 +71,11 @@
                             </li>
                         </ul>
                     </li>
+
                     <li><a th:href="@{demandes}"><i class="fa fa-clock-o orange_color"></i> <span>Liste Demandes</span></a></li>
+
+                    <li><a href="DemandeStage.html"><i class="fa fa-clock-o orange_color"></i> <span>Widgets</span></a></li>
+
                     <li>
                         <a href="#element" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i class="fa fa-diamond purple_color"></i> <span>Elements</span></a>
                         <ul class="collapse list-unstyled" id="element">

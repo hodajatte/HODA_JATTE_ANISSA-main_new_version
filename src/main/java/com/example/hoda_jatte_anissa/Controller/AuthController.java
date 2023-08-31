@@ -50,6 +50,7 @@ public class AuthController {
 
         return "DemandeStage";
     }*/
+
     @GetMapping("/demandes")
     public String ListeDemandes(Model model) {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
@@ -61,6 +62,7 @@ public class AuthController {
 
         return "demandes";
     }
+
  @GetMapping("/dashboard_2")
     public String dash(){
         return "dashboard_2";
