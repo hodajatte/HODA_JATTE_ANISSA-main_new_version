@@ -59,17 +59,14 @@
                 </div>
             </div>
             <div class="sidebar_blog_2">
-                <h4>General</h4>
+
                 <ul class="list-unstyled components">
                     <li class="active">
-                        <a href="#dashboard" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i class="fa fa-dashboard yellow_color"></i> <span>Dashboard</span></a>
-                        <ul class="collapse list-unstyled" id="dashboard">
-                            <li>
-                                <a th:href="@{dashboard}">> <span>Default Dashboard</span></a>
-                            </li>
-                        </ul>
+
                     </li>
-                    <li><a th:href="@{/demandes}"><i class="fa fa-clock-o orange_color"></i> <span>Liste Demandes</span></a></li>
+                    <li><a th:href="@{demandes}"><i class="fa fa-clock-o orange_color"></i> <span>Liste Demandes</span></a></li>
+                    <li><a th:href="@{ListeDemandeAcceptées}"><i class="fa fa-clock-o orange_color"></i> <span>Liste Demandes Acceptées</span></a></li>
+
                     <li>
                         <a href="#element" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i class="fa fa-diamond purple_color"></i> <span>Elements</span></a>
                         <ul class="collapse list-unstyled" id="element">
@@ -163,8 +160,7 @@
                             </div>
                         </div>
                     </div>
-
-                    <h2>Responsive Table</h2>
+                    <!-- Liste Demande -->
                     <div class="table-wrapper">
                         <table class="fl-table">
                             <thead>
@@ -172,90 +168,49 @@
                                 <th>Nom</th>
                                 <th>Prénom</th>
                                 <th>Email</th>
-                                <th>filère</th>
+                                <th>filière</th>
                                 <th>Etablissement</th>
                                 <th>Date Début</th>
-                                <th>Date Fin </th>
+                                <th>Date Fin</th>
                                 <th>Cv</th>
                                 <th>Lettre Motivation</th>
                                 <th>Actions</th>
-
                             </tr>
                             </thead>
                             <tbody>
                             <tr>
-                                <td>Content 1</td>
-                                <td>Content 1</td>
-                                <td>Content 1</td>
-                                <td>Content 1</td>
-                                <td>Content 1</td>
+                                <td>John</td>
+                                <td>Doe</td>
+                                <td>john@example.com</td>
+                                <td>Computer Science</td>
+                                <td>University XYZ</td>
+                                <td>2023-09-01</td>
+                                <td>2023-12-31</td>
+                                <td>CV</a></td>
+                                <td>Lettre Motivation</a></td>
+                                <td><button>Accepter</button> </td>
+                                <td><button>Refuser</button> </td>
+                                <td><button>Mettre en Attente</button> </td>
                             </tr>
                             <tr>
-                                <td>Content 2</td>
-                                <td>Content 2</td>
-                                <td>Content 2</td>
-                                <td>Content 2</td>
-                                <td>Content 2</td>
+                                <td>Anissa</td>
+                                <td>Kheir-Allah</td>
+                                <td>Anissa@gmail.com</td>
+                                <td>Computer Science</td>
+                                <td>EMSI</td>
+                                <td>2023-01-01</td>
+                                <td>2023-04-31</td>
+                                <td>CV</a></td>
+                                <td>Lettre Motivation</a></td>
+                                <td><button>Accepter</button></td>
+                                <td><button>Refuser</button></td>
+                                <td><button>Mettre en Attente</button></td>
                             </tr>
-                            <tr>
-                                <td>Content 3</td>
-                                <td>Content 3</td>
-                                <td>Content 3</td>
-                                <td>Content 3</td>
-                                <td>Content 3</td>
-                            </tr>
-                            <tr>
-                                <td>Content 4</td>
-                                <td>Content 4</td>
-                                <td>Content 4</td>
-                                <td>Content 4</td>
-                                <td>Content 4</td>
-                            </tr>
-                            <tr>
-                                <td>Content 5</td>
-                                <td>Content 5</td>
-                                <td>Content 5</td>
-                                <td>Content 5</td>
-                                <td>Content 5</td>
-                            </tr>
-                            <tr>
-                                <td>Content 6</td>
-                                <td>Content 6</td>
-                                <td>Content 6</td>
-                                <td>Content 6</td>
-                                <td>Content 6</td>
-                            </tr>
-                            <tr>
-                                <td>Content 7</td>
-                                <td>Content 7</td>
-                                <td>Content 7</td>
-                                <td>Content 7</td>
-                                <td>Content 7</td>
-                            </tr>
-                            <tr>
-                                <td>Content 8</td>
-                                <td>Content 8</td>
-                                <td>Content 8</td>
-                                <td>Content 8</td>
-                                <td>Content 8</td>
-                            </tr>
-                            <tr>
-                                <td>Content 9</td>
-                                <td>Content 9</td>
-                                <td>Content 9</td>
-                                <td>Content 9</td>
-                                <td>Content 9</td>
-                            </tr>
-                            <tr>
-                                <td>Content 10</td>
-                                <td>Content 10</td>
-                                <td>Content 10</td>
-                                <td>Content 10</td>
-                                <td>Content 10</td>
-                            </tr>
-                            <tbody>
+                            <!-- Ajoutez d'autres lignes similaires ici -->
+                            </tbody>
                         </table>
                     </div>
+
 
                     <!-- end dashboard inner -->
                 </div>

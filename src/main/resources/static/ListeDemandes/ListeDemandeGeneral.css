@@ -52,6 +52,8 @@ h2{
 }
 
 
+
+
 .fl-table thead th:nth-child(odd) {
     color: #ffffff;
     background: #324960;
@@ -126,3 +128,6 @@ h2{
         text-align: center;
     }
 }
+/* Ajoutez ces styles à votre feuille de style CSS */
+/* ... Autres styles ... */
+
