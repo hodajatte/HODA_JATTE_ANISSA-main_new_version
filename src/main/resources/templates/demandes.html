@@ -9,6 +9,9 @@
     <meta name="viewport" content="initial-scale=1, maximum-scale=1">
     <!-- site metas -->
     <title>Liste des Demandes</title>
+    <!-- lien js confirmation-->
+    <script th:src="@{/js/confirmation.js}"></script>
+
     <meta name="keywords" content="">
     <meta name="description" content="">
     <meta name="author" content="">
@@ -178,40 +181,34 @@
                             </tr>
                             </thead>
                             <tbody>
-                            <tr>
-                                <td>John</td>
-                                <td>Doe</td>
-                                <td>john@example.com</td>
-                                <td>Computer Science</td>
-                                <td>University XYZ</td>
-                                <td>2023-09-01</td>
-                                <td>2023-12-31</td>
-                                <td>CV</a></td>
-                                <td>Lettre Motivation</a></td>
-                                <td colspan="3"><button class="button button-accept">Accepter</button>
-                               <button  class="button button-reject">Refuser</button>
-                                <button class="button button-pending">Mettre en Attente</button> </td>
-                            </tr>
-                            <tr>
-                                <td>Anissa</td>
-                                <td>Kheir-Allah</td>
-                                <td>Anissa@gmail.com</td>
-                                <td>Computer Science</td>
-                                <td>EMSI</td>
-                                <td>2023-01-01</td>
-                                <td>2023-04-31</td>
-                                <td>CV</a></td>
-                                <td>Lettre Motivation</a></td>
-                                <td colspan="3"><button class="button button-accept">Accepter</button>
-                                <button  class="button button-reject">Refuser</button>
-                                <button class="button button-pending">Mettre en Attente</button>
+                            <tr th:each="demande:${demandes}">
+                                <td th:text="${demande.nom}"></td>
+                                <td th:text="${demande.prenom}"></td>
+                                <td th:text="${demande.email}"></td>
+                                <td th:text="${demande.filiere}"></td>
+                                <td th:text="${demande.etablissement}"></td>
+                                <td th:text="${demande.dateDebut}"></td>
+                                <td th:text="${demande.dateFin}"></td>
+                                <td><a th:href="@{/admin/demande/{demandeId}/download-cv(demandeId=${demande.id})}">Télécharger CV</a></td>
+                                <td><a th:href="@{/admin/demande/{demandeId}/download-lettre(demandeId=${demande.id})}">Télécharger Lettre</a></td>
+
+                                <td colspan="3">
+                                    <form th:action="@{/admin/demande/{demandeId}/accepter(demandeId=${demande.id})}" method="post">
+                                    <button class="button button-accept" type="button" onclick="showConfirmationModal('Accepter', ${demande.id})">Accepter</button>
+                                    </form>
+                                    <form th:action="@{/admin/demande/{demandeId}/refuser(demandeId=${demande.id})}" method="post">
+                                        <button  class="button button-reject" type="submit">Refuser</button>
+                                    </form>
+                                    <form th:action="@{/admin/demande/{demandeId}/attente(demandeId=${demande.id})}" method="post">
+                                        <button class="button button-pending" type="submit">Mettre en Attente</button>
+                                    </form>
                                 </td>
+
                             </tr>
                             <!-- Ajoutez d'autres lignes similaires ici -->
                             </tbody>
                         </table>
                     </div>
-
 
                     <!-- end dashboard inner -->
                 </div>
