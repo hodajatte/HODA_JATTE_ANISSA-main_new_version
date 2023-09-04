@@ -8,6 +8,8 @@ import org.springframework.web.multipart.MultipartFile;
 
 
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 
 
 @Data
@@ -34,7 +36,6 @@ public class Demande {
     @Transient
     private MultipartFile lettreMotivationFile;
 
-    private String Etat;
     private String email;
 
     private String filiere;
@@ -43,5 +44,8 @@ public class Demande {
     private String niveau_scolaire;
     private String genre;
     private String type;
+    @OneToMany(mappedBy = "demande", cascade = CascadeType.ALL)
+    private List<DemandeEtat> etats = new ArrayList<>();
+
 
 }

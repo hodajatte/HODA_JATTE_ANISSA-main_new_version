@@ -92,8 +92,6 @@ public class DemandeController {
             return "DemandeStage"; // Retourner à la page du formulaire avec le message d'erreur
         }
 
-
-
     }
 
     private String generateUniqueFileName(String originalFileName) {
